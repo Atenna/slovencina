@@ -1,4 +1,4 @@
-require 'lib/leven'
+require '/lib/leven.rb'
 
 class AttemptsController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => :create

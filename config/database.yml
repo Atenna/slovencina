@@ -2,14 +2,14 @@ development:
   adapter: postgresql
   encoding: utf8
   database: slovencina_development
-  username: root
-  password: ruebe
+  username: liesk
+  password: appka
   host: localhost
 
 test:
   adapter: postgresql
   encoding: utf8
   database: slovencina_test
-  username: root
-  password: ruebe
+  username: liesk
+  password: appka
   host: localhost
