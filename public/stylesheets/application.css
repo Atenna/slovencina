@@ -27,6 +27,27 @@ section,
 summary {
   display: block;
 }
+.justif_both {
+  text-align: justify;
+  text-justify: inter-word;
+}
+.about_ling {
+  background-color: #00b386;
+  margin-top: -20px;
+  height: 70px;
+}
+.author-img {
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  margin-top: 15px;
+}
+.p-small {
+  font-size: 0.8em;
+}
+.about-authors {
+  background-color: #e6e6e6;
+}
 audio,
 canvas,
 progress,
