@@ -32,13 +32,14 @@ class GraphsController < ApplicationController
           
           x = XAxis.new
           x.set_range(start_point.to_time.to_i, end_point.to_time.to_i)
-          x.steps = 86400
+          x.steps = 9999999999
           
           labels = XAxisLabels.new
-          labels.text = "#date: l jS, M Y#"
+          #labels.text = "#date: l jS, M Y#"
+          labels.text = "#date: j M#"
           labels.steps = 86400
-          labels.visible_steps = 4
-          labels.rotate = 90
+          labels.visible_steps = 7
+          #labels.rotate = 90
 
           x.labels = labels
           
@@ -46,10 +47,11 @@ class GraphsController < ApplicationController
           y.set_range(0, y_max.ceil, 0.3)
       
           chart = OpenFlashChart.new
-          chart.title = Title.new("Зависимость среднего расстояния Левенштайна от времени")
+          chart.title = Title.new("Mean distance over time")
           chart.add_element(line)
           chart.x_axis = x
           chart.y_axis = y
+          chart.set_bg_colour('#f8f8f8')
           
           render :text => chart, :layout => false
      end

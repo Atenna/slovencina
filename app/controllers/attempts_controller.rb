@@ -1,4 +1,4 @@
-require '/lib/leven.rb'
+include Leven
 
 class AttemptsController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => :create
@@ -28,9 +28,9 @@ class AttemptsController < ApplicationController
     respond_to do |format|
       format.html do
         if attempt.is_correct
-          flash[:notice] = "Верно. #{current_user.from_for_word(word).capitalize} переводится как #{current_user.to_for_word(word)}"
+          flash[:notice] = "Correct. #{current_user.from_for_word(word).capitalize} переводится как #{current_user.to_for_word(word)}"
         else
-          flash[:error] = "Неверно. #{current_user.from_for_word(word).capitalize} переводится не как #{params[:attempt][:version]}, а как #{current_user.to_for_word(word)}"
+          flash[:error] = "Incorrect. #{current_user.from_for_word(word).capitalize} переводится не как #{params[:attempt][:version]}, а как #{current_user.to_for_word(word)}"
         end
         
         redirect_to :action => :new

@@ -1,3 +1,5 @@
+module Leven
+
 $KCODE = 'UTF-8'
 
 def ld(s,t)
@@ -24,4 +26,6 @@ def ld(s,t)
     end
   end
   a[n][m]
+end
+
 end
